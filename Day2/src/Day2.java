@@ -50,7 +50,6 @@
 //
 //    What letters are common between the two correct box IDs? (In the example above, this is found by removing the differing
 //    character from either ID, producing fgij.)
-
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -60,8 +59,7 @@ import java.util.stream.Collectors;
 public class Day2 {
 
     private static final List<String> INPUT_LIST = Arrays.asList("pbopcmjeizuhxlqnwasfgtycdm", "pjokrmjeizuhxlqnfasfguycdv", "pbokrpjejkuhxlqnwasfgtycdv", "sbokrmjeizuhxaqnwastgtycdv", "pbokrmjeizuhxljnnasfgtycnv", "pbokrqjeizuhxbqndasfgtycdv", "bbokrmjeizuhxlqnwasfgtycfj", "pbokrmjeisuhxlqnwasfzdycdv", "pbokrmjefxuhxlqnwasfptycdv", "pqokrmjenzuhxlqnwasfgtygdv", "pbokrmjeizunklqnwassgtycdv", "pbokrmjeizghxvqnkasfgtycdv", "lboirmjeizuhxlqnwfsfgtycdv", "pbofrmjeizuhalqnwasfgtyddv", "pbokrmjeiguhplqcwasfgtycdv", "pbokrmjeizzhxlqnwavfgtyctv", "pbokrmjeizuhxlqnwaefgtycaj", "pbokzmjedzuhxlqnwasfgtlcdv", "pnokrmjegzuhxlbnwasfgtycdv", "pbojrmjeizuhtlqniasfgtycdv", "pbokxmiefzuhxlqnwasfgtycdv", "pbokrmoeizuhxlqnpasngtycdv", "abokrmjeezuhxlqnwasfdtycdv", "pbokrmyeizugxlqnwasfgtycda", "pbokdmjeizuhxlqnuatfgtycdv", "psokrmjeiauhxlqnwasxgtycdv", "pbokrmjeizuhxlqzwasfgtyzdy", "pboktmjeizuhxnqndasfgtycdv", "pbodrrjeizuhxlqnwasfgtycdb", "pbokrmjekzuhxljnwasfgtycuv", "pbokrmjnizuhllqnwawfgtycdv", "prmkrmjeiwuhxlqnwasfgtycdv", "pbokrmjeizkhxlenwajfgtycdv", "pbofrmjeizuixlqnwasfgoycdv", "gbhkrmjeizuhclqnwasfgtycdv", "pbokrmweizuwxlqnwasfgtycyv", "pbukrmjeizuhxlqnwasfgqhcdv", "pbokxmjeizuhxlqnwasfgtecdu", "pbokomjeizuhrlqnfasfgtycdv", "bbokymjeizuhxlqnpasfgtycdv", "pbodrmjeizuhxlqnwadfgtgcdv", "zbokrljeipuhxlqnwasfgtycdv", "pboermjeizuxxlqnwasfgtpcdv", "pqbkrmjeizuhxlqnjasfgtycdv", "pbokrmfeizuhxvqgwasfgtycdv", "pbokrmjeizuhzlqnjasfdtycdv", "rbofrmjeizkhxlqnwasfgtycdv", "pbokrmseizubxlqnwasfgtycdy", "pbocrmjeizuhxaqnwasfgtycda", "pbokrmjeizuhxlqndakfgtscdv", "pbokrrjeizuhxlqnwgshgtycdv", "pbokrajeizuhxpqnwasrgtycdv", "pbokrbjeizubxlqnwssfgtycdv", "pbokemjhizuhxlqnwazfgtycdv", "pbokrmjeizuhxlqntisfgtyrdv", "pbokrmjwinuhxlqnwasfgkycdv", "pypkrmjeizuhxlqtwasfgtycdv", "pbokrmjeizuhxlqniasfrpycdv", "pbokomjeizuhxlqnwasfgtgcdw", "pbokrmjeizusplqnwxsfgtycdv", "pbodrmueizxhxlqnwasfgtycdv", "pbokwmjeizurxlqnwasfgtycdi", "pbohrmjejzuhxlqnwasfgtycgv", "pbokrmtqizuhxlqnwasfitycdv", "ptozrmjeizuhylqnwasfgtycdv", "pbokrmjtizuhxlqfwasfgtykdv", "pbokrmpeizuhxnqmwasfgtycdv", "pbokrmjeizujxlynwtsfgtycdv", "dbokrmjeizuhxlqnwasngticdv", "pbskrmjeizuhxlqnrasfttycdv", "pbwkrmjerzuhxlqnwaslgtycdv", "pboyrmceizuhxlqnwssfgtycdv", "pbokpmjeizchxlqngasfgtycdv", "pbokrmjenzuhxlqnwcsfgxycdv", "pbxkrmjeizuhxlqnwadfgtyckv", "pbqkrmjeizuhxlqnwasdgdycdv", "pbokrmoeizdhxlqnwasfgtycqv", "pbokrmjejzuhxlqnwksfgtycwv", "pbfkrmjeieuhxlnnwasfgtycdv", "pbokrmjeiuuhxlqnpalfgtycdv", "pbokrmjeizunxyqnwasfgtdcdv", "pbokrmjeazuhxrqnwasogtycdv", "pbmkrmjeizuhxlqnwaufgtycdj", "xbskrmjeipuhxlqnwasfgtycdv", "tbokrujlizuhxlqnwasfgtycdv", "xbokvmjeizuhxyqnwasfgtycdv", "pbnhrmheizuhxlqnwasfgtycdv", "pboorajrizuhxlqnwasfgtycdv", "pbokrmjeizuhxminwusfgtycdv", "pboqrmjeizuhxlqnwaslgtscdv", "pgokrdjeizuhxlnnwasfgtycdv", "pbokrmjeizuhxiqnwasvttycdv", "pbokrmwnizuhzlqnwasfgtycdv", "pbokrmjlizmhjlqnwasfgtycdv", "pbwkrmjeizohxlqnwasfgtyzdv", "pbykrmjmizwhxlqnmasfgtycdv", "pbokrmjzizuhxeqnwasfgtpcdv", "pbokrmjewzuhxzqnwasfgtybdv", "pbokrmjeimupxlonwasfgtycdv", "pbokrmjvizuhxlqnuasfgtycqv", "pbokrmjeizjdxlqnwasfetycdv", "pbofrmjeizurxlqnwasfztycdv", "pbozrmjeizuhxxqpwasfgtycdv", "pbovtmjeizuhxlqnwapfgtycdv", "prokrmjeuzuhxlqnwasfgtycqv", "ubokrmjeizuhxljnwasfgtdcdv", "pboknmjepzuhxlqnwasogtycdv", "pbokrmjaizuaxljnwasfgtycdv", "pbdkrcjeizuhxlqnwasfgtvcdv", "pbokymjeizuhxlqnwaxfgtyfdv", "pbokrmjaizuhxlqnfasfgtyodv", "pdekrmmeizuhxlqnwasfgtycdv", "rbokrmjeizuuxlqnwasfgtycdj", "pbokrmneifuhxlqiwasfgtycdv", "pbokrmjeizlbxlunwasfgtycdv", "pbokrmjewzuhxxqnwasfgoycdv", "pbokrmjeizuhxlqtwasfgtzcdo", "pbokrmkeizzhxlqnwasfgtycmv", "pbokrmjeiquhxlqnywsfgtycdv", "xbokrmjeizjhxlqdwasfgtycdv", "pbokrmjeizahxzqnzasfgtycdv", "pbokrmjeizuhxmqmwasfgtytdv", "pbokrmheiluhxlqnwasfgoycdv", "rbokrmjeizuhxlqnwaslgtycqv", "pbbkzmjeizuhxvqnwasfgtycdv", "pbokrmjeizudxlznwgsfgtycdv", "pbokemjeizuhxlqnwascgtysdv", "pbokrmjdizuexlgnwasfgtycdv", "pbokzmjeizuhxlqnwnsfggycdv", "pbokrmjeizuhxtqnwasfgiycdy", "bbokrmjeizuhclunwasfgtycdv", "pbtkrmjeieuhxlqnwasfgtycrv", "pbokrmjeizutxlbnwasngtycdv", "pbokrmjevzumxlqnwasfgtyydv", "pbokrmjsizuhxlqowasfgtycyv", "pbssrmjeizuhxlqbwasfgtycdv", "pbokrmjeizuhflqnwxsfstycdv", "pbokimjeizuhxlqnwasfgtywdm", "pbokrmjbizuhxlqdwasfgtygdv", "pbokrmheizuhxlqxwasfgtycnv", "poakrmjeizuhylqnwasfgtycdv", "vbrkrmjeizuhxlqnwaszgtycdv", "pbokrmjeizuhxiqnudsfgtycdv", "pbokrldeizuhxlqnwasjgtycdv", "pbokrmjeizjhflqnwasfgtymdv", "pbokrmjeizuhxliawasfgtvcdv", "pbokrmjeisuhtoqnwasfgtycdv", "nbokrijeizuhxlqnwasfgtycdh", "pbokrmjeizrhxlqnwxsfztycdv", "pbotrmjeizuhxlcnwasfgtyvdv", "pbokrmjewzuhxlquwasfgtjcdv", "pbosrmjeipuhxlqnwasfgtvcdv", "pbokrmjebzurxlunwasfgtycdv", "pbogimieizuhxlqnwasfgtycdv", "pbokrmjeizihxlqnwasagtyzdv", "pbokrmjeizuoxlqnausfgtycdv", "pbokrmjeizuhxlqnwashgbjcdv", "pbokrdjeizuhxlnnwasfgoycdv", "pbokrzjtizlhxlqnwasfgtycdv", "peokrmjexzuhxlqnwasfgoycdv", "cboprmjeizuhxlqnwasfgfycdv", "pbitrmjeizjhxlqnwasfgtycdv", "pbourmjeizuhxldnwjsfgtycdv", "pboivmjeizuhxlqnwasvgtycdv", "pbokrmjeiduhxaqnqasfgtycdv", "pbokicjeiwuhxlqnwasfgtycdv", "pbokrmmeizulxlqnwasfgtyvdv", "pbokrmjeieuhxlqnaapfgtycdv", "pbokxmjeiuuhxlqnwasfgtyqdv", "pbokrmjeizuhxgqniaslgtycdv", "pbokrmjeizuuxlqnwisfgtyckv", "pbovlmjepzuhxlqnwasfgtycdv", "pbokrmjeizuhxlqdwaqfgtycdj", "pbztrvjeizuhxlqnwasfgtycdv", "pbokrmjeizuholunwasfptycdv", "pbokrmjeizudxlqnwusfgtycqv", "nbokrmjzizmhxlqnwasfgtycdv", "pbokrmjeypunxlqnwasfgtycdv", "pbokrjjxizuhxlqnwasfgtyddv", "pbokrmjeizuhilqnwiufgtycdv", "pbokrmjeizuhxtqowasfgfycdv", "qbokrgjeizuhxlqnwasfgtycdx", "pvoarmjeizuhxlqnwasfgtfcdv", "pbokrmjjizuhxlqnwasfggyczv", "pbtkrmjeizuhnlqncasfgtycdv", "pbokrmjeizuzxlqnwasfgtyjnv", "jmokrmzeizuhxlqnwasfgtycdv", "pbykrmjmizwhxlqnwasfgtycdv", "nbokrmjeizlhxlqnwasfgtecdv", "pbokrmjeizuhxlqhwasrgrycdv", "pbokrmjeiruhxlqnwasfgtnedv", "pbokrmjeizohxlznwasfgtycuv", "paokrmjdizuhxlqnwasfktycdv", "pbokrmjetzutxlqnwasfntycdv", "pboyrmjeizuhxlqnwasfgtetdv", "pbokgujeizuhxlqwwasfgtycdv", "pbokrifeizshxlqnwasfgtycdv", "sbokrmjeizfhxlqnaasfgtycdv", "pbokrmjeizuhxlqpwrsfgfycdv", "pbokxmjeikuhxlqnwasfctycdv", "fbokrmjhizuhxlqnmasfgtycdv", "pbekamjeizuhxlqnwaxfgtycdv", "pboksmpeizuhxlqnwasfgtyclv", "pbokrmjeizrhxdqnwasfgzycdv", "pbogrmxeizurxlqnwasfgtycdv", "pbokrmjeieuhxlqnwqsfgtychv", "vbokrmjeizuhxlqnwabfgtycdq", "lbokrmjeizupxlqvwasfgtycdv", "pbokrmjeizuhglqnuasfgtucdv", "hbokrmjeizuhelqnwasfgtrcdv", "pbokrmweizuhxlqnwhsfgtyvdv", "pbokrmjeizuhxrqnwasfvtccdv", "pbokrmneizuhxlwnyasfgtycdv", "ybokymjeqzuhxlqnwasfgtycdv", "pbousmjeizuhxlqswasfgtycdv", "pblkimjeizuhxlqnwacfgtycdv", "psokrmjeizuhxlqnwasfgbpcdv", "peokrwjeizghxlqnwasfgtycdv", "pbokrmjeizudxlqnwzsfrtycdv", "pbotrmjezzxhxlqnwasfgtycdv", "pkokrmjezzuhxlqnwasfgtycdh", "pbokrmleizuhxlnnwasfgtyndv", "pboxwmjeituhxlqnwasfgtycdv", "pbokrmjeizoczlqnwasfgtycdv", "pbokomjeizuhxlqnwhsfgtybdv", "pbhwrmjeizuhxlqnwasfgpycdv", "pbwkrmjeizuhxeqnwasfgtyidv", "pbokrmjeizuhxlqnjasfgmicdv", "tbokrgjeizuhxlqhwasfgtycdv", "pbolrqjeizuhxlqnhasfgtycdv", "pbogrhjeizbhxlqnwasfgtycdv", "pbokrmjeizghxlqnwashgtycdx", "pbokrmjeizuhrlqnwasfgthcrv", "pbokrmjeizuhxlqnwfsngtacdv", "pbokrmxeizuhxlqnwasfotyctv", "pbokrmjeizuhxlqnwcsfgnocdv", "pnokbmjeizuhxlqnwasfgtscdv", "pbowrmjeuzuhxlqnwasfgtycdw", "pbokrmjeiyuhxlqnwasqgtvcdv", "pbokrmjeivuhxkpnwasfgtycdv", "pbokomjeizuhxlqnwasfgtylav", "pbdkrmjeizuhxlgnwjsfgtycdv", "pbokrmjeizuaxxqnwasfytycdv", "pbokrmjerzuhxlqnwasfgtscdk", "pbokrmzerzuhxlqnwasfntycdv", "pbokrmjeizumxdqnwasfgtyckv", "pbtkrmjeizrhxlqnwasfgtjcdv", "pbmkrmjuizuhxlqnwasfgtytdv", "pbokpmjeizuhxlqnwastgtzcdv", "kbokrmjeizuhxlqnwasfgzjcdv");
-    private static final List<String> TEST = Arrays.asList("jaksie", "jagsia", "haksie", "jagsie");
-    
+
     public static void main(String[] args) {
 //        printing result of PART1
         System.out.println("PART1: " + part1(INPUT_LIST));
@@ -91,21 +89,18 @@ public class Day2 {
         }
         return counterOfThree * counterOfTwo;
     }
-    
+
     private static String part2() {
-        String[] array = findClosestPair(TEST);
-        System.out.println("FIRST : " + array[0] + array[0].length());
-        System.out.println("SECOND: " + array[1] + array[1].length());
+        String[] array = findClosestPair(INPUT_LIST);
         String common = "";
         for (int i = 0; i < array[0].length(); i++) {
             if (array[0].charAt(i) == array[1].charAt(i)) {
                 common += array[0].charAt(i);
             }
         }
-        System.out.println("WYNIK : " + common + " " + common.length());
         return common;
     }
-    
+
     private static int closeness(String first, String second) {
         int min = Math.min(first.length(), second.length());
         int diff = Math.abs(first.length() - second.length());
@@ -116,22 +111,21 @@ public class Day2 {
         }
         return diff;
     }
-    
-    // There is a bug
+
     private static String[] findClosestPair(List<String> list) {
         int closestDiff = list.get(0).length() + 1;
         String[] closestPair = new String[2];
+//      Comparing all elements in list
         for (int i = 0; i < list.size() - 1; i++) {
-            String firstElement = list.get(i);
-            String secondElement = list.get(i + 1);
-            int diff = closeness(firstElement, secondElement);
-            if (diff < closestDiff) {
-                closestDiff = diff;
-                closestPair[0] = firstElement;
-                closestPair[1] = secondElement;
-                System.out.println(diff);
-                System.out.println(firstElement);
-                System.out.println(secondElement);
+            for (int j = i + 1; j < list.size(); j++) {
+                String firstElement = list.get(i);
+                String secondElement = list.get(j);
+                int diff = closeness(firstElement, secondElement);
+                if (diff < closestDiff) {
+                    closestDiff = diff;
+                    closestPair[0] = firstElement;
+                    closestPair[1] = secondElement;
+                }
             }
         }
         return closestPair;
